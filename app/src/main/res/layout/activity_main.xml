@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E3F2FD"
+    android:padding="24dp">
+
+    <!-- Decorative circle background -->
+    <View
+        android:id="@+id/topCircle"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:background="#BBDEFB"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="-150dp"
+        android:rotation="45"
+        android:scaleX="1.5"
+        android:scaleY="1.5"
+        android:alpha="0.3" />
+
+    <!-- App Title -->
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="🩺 HealthApp"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:textColor="#1565C0"
+        android:layout_marginTop="100dp"
+        android:layout_centerHorizontal="true" />
+
+    <!-- Card-like container -->
+    <RelativeLayout
+        android:id="@+id/inputCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/title"
+        android:layout_marginTop="40dp"
+        android:background="#FFFFFF"
+        android:elevation="8dp"
+        android:padding="24dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginBottom="20dp"
+        android:layout_alignParentBottom="false"
+        android:clipToOutline="true">
+
+        <!-- Name input -->
+        <EditText
+            android:id="@+id/editName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter your name"
+            android:padding="12dp"
+            android:background="@android:drawable/edit_text"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Age input -->
+        <EditText
+            android:id="@+id/editAge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter your age"
+            android:layout_below="@id/editName"
+            android:padding="12dp"
+            android:background="@android:drawable/edit_text"
+            android:inputType="number" />
+        <!-- Height input -->
+        <EditText
+            android:id="@+id/editHeight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter your height in cm"
+            android:layout_below="@id/editAge"
+            android:padding="12dp"
+            android:background="@android:drawable/edit_text"
+            android:inputType="number" />
+        <!-- Weight input -->
+        <EditText
+            android:id="@+id/editWeight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter your weight"
+            android:layout_below="@id/editHeight"
+            android:padding="12dp"
+            android:background="@android:drawable/edit_text"
+            android:inputType="number" />
+
+        <!-- Send button -->
+        <Button
+            android:id="@+id/btnSend"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/editWeight"
+            android:layout_marginTop="24dp"
+            android:text="Continue ➜"
+            android:backgroundTint="#2196F3"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:elevation="4dp" />
+
+    </RelativeLayout>
+
+    <!-- Footer -->
+    <TextView
+        android:id="@+id/footerText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Stay fit. Stay healthy."
+        android:textColor="#607D8B"
+        android:layout_below="@id/inputCard"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:textSize="14sp" />
+
+</RelativeLayout>
