@@ -104,6 +104,7 @@
 
     </RelativeLayout>
 
+
     <!-- Footer -->
     <TextView
         android:id="@+id/footerText"

@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.*;
 import android.content.Intent;
+import com.google.android.material.snackbar.Snackbar;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -25,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
             String name = editName.getText().toString();
             String age = editAge.getText().toString();
             String height = editHeight.getText().toString();
-            String weight = editAge.getText().toString();
+            String weight = editWeight.getText().toString();
 
 
             Intent intent = new Intent(MainActivity.this, ResultActivity.class);
@@ -35,7 +36,20 @@ public class MainActivity extends AppCompatActivity {
             bundle.putString("height", height);
             bundle.putString("weight", weight);
             intent.putExtras(bundle);
-            startActivity(intent);
+            startActivityForResult(intent, 101);
         });
     }
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 101 && resultCode == RESULT_OK) {
+            String retour = data.getStringExtra("message");
+            Snackbar.make(findViewById(android.R.id.content), retour, Snackbar.LENGTH_INDEFINITE)
+                    .setAction("OK", v -> {})
+                    .show();
+        }
+
+    }
+
+
 }
